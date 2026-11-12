@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>Subhash Dixit Split Light monogram</title>
+  <rect x="7" y="7" width="86" height="86" rx="19" fill="#111f22" stroke="#487d76" stroke-width="1.5"/>
+  <path fill="#1e4d4c" d="M49 8h25c10 0 18 8 18 18v48c0 10-8 18-18 18H49z"/>
+  <path fill="none" stroke="#90f4e7" stroke-width="6" stroke-linecap="round"
+    d="M45 36c-7-6-17-2-17 4 0 4 5 6 10 7 5 2 9 4 9 9 0 8-14 11-22 4"/>
+  <path fill="none" stroke="#cffdf4" stroke-width="6" stroke-linejoin="round"
+    d="M55 34h6c11 0 17 7 17 16s-6 16-17 16h-6z"/>
+  <path d="M49 16v8m0 52v8" stroke="#6edace" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: subhash-portfolio-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORTFOLIO_ORIGIN
+        value: https://subhashdixit.github.io
+      - key: EURI_API_KEY
+        sync: false

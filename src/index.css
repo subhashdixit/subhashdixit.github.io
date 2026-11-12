@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white transition-colors duration-500;
+  }
+}
+
+@layer components {
+  .card-dark {
+    @apply bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/50;
+  }
+
+  .card-light {
+    @apply bg-white border border-gray-200;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(20, 184, 166, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .pattern-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(20, 184, 166, 0.1) 10px,
+      rgba(20, 184, 166, 0.1) 20px
+    );
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-teal-500/50 rounded-full hover:bg-teal-500;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed header */
+}
+
+/* Ensure sections are reachable */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Selection */
+::selection {
+  @apply bg-teal-500/30 text-white;
+}
