@@ -1,6 +1,8 @@
 services:
   - type: web
     name: subhash-portfolio-api
+    repo: https://github.com/subhashdixit/subhash-portfolio-api.git
+    branch: main
     runtime: node
     plan: free
     buildCommand: npm ci --omit=dev

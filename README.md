@@ -111,8 +111,10 @@ The public site stores up to 12 recent chats in the visitor’s browser profile.
 ### Backend on Render
 
 1. Use the private `subhash-portfolio-api` repository with the backend, its shared `src/data` modules, dependency lockfile, and prebuilt LanceDB snapshot. Each backend update needs the matching versions of these files. Add the snapshot only to the private deployment repository.
-2. In the [Render dashboard](https://dashboard.render.com/), choose **New → Blueprint**, grant Render access to the private repository, and select its `main` branch. `render.yaml` specifies the free Node web service, the allowed frontend origin, and `/healthz`. Set a fresh `EURI_API_KEY` in the Render dashboard.
+2. In the [Render dashboard](https://dashboard.render.com/), grant Render access to the private repository and sync the Blueprint. `render.yaml` explicitly points the Node service to `subhashdixit/subhash-portfolio-api` on `main`, even if the Blueprint itself is linked to the public frontend repository. Set `EURI_API_KEY` directly in Render.
 3. Verify `GET /healthz` on the assigned Render URL. The server checks that the three required tables can open at startup. To exercise the actual chat route, send a JSON question with the portfolio origin header.
+
+If startup reports a missing LanceDB table, check the first line of the deploy log. It should show Render cloning `subhashdixit/subhash-portfolio-api`. The public Pages repository contains the app source and the deployment guide. The index snapshot lives in the private API repository.
 
 ```bash
 curl -fsS https://YOUR-API.onrender.com/api/ask \
