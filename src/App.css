@@ -946,7 +946,12 @@ a.loop-card:hover {
   color: var(--loop-accent);
 }
 
-.loop-project-github {
+.loop-project-links {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.loop-project-links a {
   position: relative;
   z-index: 1;
   color: var(--loop-accent);
@@ -956,7 +961,7 @@ a.loop-card:hover {
   text-underline-offset: 3px;
 }
 
-.loop-project-github:hover {
+.loop-project-links a:hover {
   text-decoration: underline;
 }
 

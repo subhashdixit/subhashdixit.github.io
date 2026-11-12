@@ -56,15 +56,14 @@ export default function Projects() {
                       {title}
                     </a>
                   </h2>
-                  <a
-                    className="loop-project-github"
-                    href={`${githubProfile}/${slug}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${title} on GitHub`}
-                  >
-                    GitHub <span aria-hidden="true">↗</span>
-                  </a>
+                  <div className="loop-project-links">
+                    <a href={liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} live app`}>
+                      Live <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href={`${githubProfile}/${slug}`} target="_blank" rel="noopener noreferrer" aria-label={`${title} on GitHub`}>
+                      GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
                 </div>
                 <p>{description}</p>
               </div>
