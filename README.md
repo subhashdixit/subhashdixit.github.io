@@ -98,10 +98,20 @@ The Pages workflow runs `npm run lint` and `npm run build`. Before sharing a new
 
 ## Deployment
 
+GitHub Pages serves the portfolio at [subhashdixit.github.io](https://subhashdixit.github.io/). GitHub Actions installs locked dependencies, runs lint and the Vite build, and publishes `dist/` on updates to `main`. The private API repository is deployed separately using the Render Blueprint.
+
+| Setting | Where it is configured | Purpose |
+| --- | --- | --- |
+| `VITE_CHAT_API_URL` | GitHub Actions repository variable | Public Render origin for the chat and transcription endpoints. |
+| `PORTFOLIO_ORIGIN` | Render Blueprint | Exact GitHub Pages origin allowed to call the API from a browser. |
+| `EURI_API_KEY` | Render secret or local `.env.local` | Authenticates embedding, generation, and transcription requests. |
+
+The public site stores up to 12 recent chats in the visitor’s browser profile. The API receives the question and limited context for follow-ups. Voice input is uploaded for transcription when a visitor records and submits a question.
+
 ### Backend on Render
 
 1. Use the private `subhash-portfolio-api` repository with the backend, its shared `src/data` modules, dependency lockfile, and prebuilt LanceDB snapshot. Each backend update needs the matching versions of these files. Add the snapshot only to the private deployment repository.
-2. In Render, create a Blueprint from that repository. `render.yaml` specifies the free Node web service, the allowed frontend origin, and `/healthz`. Set a fresh `EURI_API_KEY` in the Render dashboard.
+2. In the [Render dashboard](https://dashboard.render.com/), choose **New → Blueprint**, grant Render access to the private repository, and select its `main` branch. `render.yaml` specifies the free Node web service, the allowed frontend origin, and `/healthz`. Set a fresh `EURI_API_KEY` in the Render dashboard.
 3. Verify `GET /healthz` on the assigned Render URL. The server checks that the three required tables can open at startup. To exercise the actual chat route, send a JSON question with the portfolio origin header.
 
 ```bash
@@ -117,7 +127,7 @@ curl -fsS https://YOUR-API.onrender.com/api/ask \
 2. In **Settings → Secrets and variables → Actions → Variables**, set `VITE_CHAT_API_URL` to the assigned Render HTTPS origin.
 3. Run **Verify and deploy GitHub Pages**. The deployed static bundle uses that origin for chat and voice requests. Open the live site and run the smoke checks above.
 
-Render free services sleep after inactivity, so the first chat or transcription request can take longer. Site pages and contact remain reachable during that startup. API usage also depends on the Euri account quota.
+With the API URL unset, Ask Subhash displays “The chat service is being connected.” Once configured, Render free services can sleep after inactivity, so the first chat or transcription request can take longer. The portfolio and contact form remain reachable during that startup. API usage also depends on the Euri account quota.
 
 ## Repository layout
 

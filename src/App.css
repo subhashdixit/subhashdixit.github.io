@@ -63,7 +63,7 @@
   display: none;
 }
 
-@media (max-width: 1023px) {
+@media (width < 1024px) {
   .loop-header {
     position: relative;
     gap: 10px;
@@ -192,7 +192,7 @@ a.loop-card:hover {
 }
 
 .loop-intro.loop-home {
-  --home-portrait-size: 176px;
+  --home-portrait-size: 196px;
   display: grid;
   row-gap: clamp(24px, 3vw, 36px);
   padding-top: clamp(28px, 4.5vw, 62px);
@@ -256,6 +256,7 @@ a.loop-card:hover {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
+  border: 1px solid var(--loop-border);
   border-radius: 50%;
   object-fit: cover;
 }
@@ -263,10 +264,18 @@ a.loop-card:hover {
 .loop-home-skills {
   grid-area: skills;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
-  gap: 12px 28px;
-  padding-block: 16px 0;
-  border-top: 1px solid var(--loop-border);
+  gap: 12px;
+}
+
+.loop-home-skills > div,
+.loop-home-links a {
+  border: 1px solid var(--loop-border);
+  border-radius: 10px;
+  background: rgb(22 48 46 / 24%);
+}
+
+.loop-home-skills > div {
+  padding: 14px 16px;
 }
 
 .loop-home-skills dt {
@@ -278,6 +287,12 @@ a.loop-card:hover {
 .loop-home-skills dd,
 .loop-home-work p {
   color: var(--loop-muted);
+}
+
+.loop-home-skills dd {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .loop-home-work {
@@ -315,18 +330,34 @@ a.loop-card:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 20px;
+  gap: 10px;
   margin-top: 16px;
   font-weight: 550;
 }
 
-.loop-home-links a:hover {
-  text-decoration: underline;
+.loop-home-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 7px 12px;
+}
+
+.loop-home-links a:hover,
+.loop-home-links a:focus-visible {
+  border-color: var(--loop-accent);
+  background: rgb(22 48 46 / 50%);
+}
+
+@media (min-width: 640px) {
+  .loop-home-skills {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (width < 740px) {
   .loop-intro.loop-home {
-    --home-portrait-size: clamp(84px, 14vw, 104px);
+    --home-portrait-size: clamp(84px, 15vw, 110px);
     --home-portrait-gap: clamp(22px, 6vw, 44px);
     grid-template-areas:
       "identity profile"
@@ -384,6 +415,10 @@ a.loop-card:hover {
     grid-template-columns: clamp(150px, 22vw, 224px) minmax(0, 1fr);
     column-gap: clamp(48px, 7vw, 70px);
   }
+  .loop-home-profile {
+    align-self: start;
+    margin-top: 18px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -404,13 +439,29 @@ a.loop-card:hover {
   }
 }
 
+@media (min-width: 1024px) {
+  .loop-home-summary {
+    container-type: inline-size;
+  }
+
+  .loop-home-summary > .loop-tagline {
+    font-size: clamp(14px, 2.4cqi, 20px);
+    white-space: nowrap;
+  }
+}
+
 @media (min-width: 900px) and (max-height: 820px) {
   .loop-shell:has(.loop-home) {
     padding-block: clamp(16px, 3vh, 28px) clamp(14px, 2.5vh, 24px);
   }
 
   .loop-intro.loop-home {
-    padding-top: clamp(22px, 4vh, 36px);
+    row-gap: 18px;
+    padding-top: clamp(20px, 3.5vh, 30px);
+  }
+
+  .loop-home-skills > div {
+    padding-block: 12px;
   }
 }
 

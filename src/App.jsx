@@ -6,7 +6,7 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import profileImage from './assets/profile-soft-teal.webp'
+import profileImage from './assets/profile-charcoal-teal.webp'
 import './App.css'
 
 const pages = [
@@ -33,17 +33,18 @@ function Home() {
           <p className="loop-home-tenure">5+ years of experience</p>
         </div>
         <div className="loop-home-summary">
-          <p className="loop-tagline">Building forecasting systems, modelling pricing and promotions, and developing AI tools.</p>
-          <p>I’ve developed and tuned time-series models for sales and demand forecasting, built econometric models for price elasticity and promotional response, and used NLP and topic modelling to find recurring themes in customer feedback.</p>
+          <p className="loop-tagline">Forecasting | Pricing &amp; Promotions | Feedback Analysis | AI Chatbots &amp; Agents</p>
+          <p>I’ve built sales and demand forecasting systems, developed econometric models to measure price elasticity and promotion response, and used NLP to find recurring themes in customer feedback.</p>
           <p id="home-projects">I built <a href="#ai-lab">Ask Subhash</a>, a RAG chatbot that answers questions about my work and links to the original code, notebook, or report. I also build reusable AI skills and agents to help me review code, debug, and test changes.</p>
+          <p>I enjoy taking an idea from a notebook to a tool people can use in their day-to-day work.</p>
         </div>
       </div>
 
       <div className="loop-home-profile">
-        <img className="loop-home-portrait" src={profileImage} alt="Subhash Dixit" width={176} height={176} />
+        <img className="loop-home-portrait" src={profileImage} alt="Subhash Dixit" width={196} height={196} />
         <div className="loop-home-affiliation">
           <p>EPAM Systems</p>
-                  <p>B.Tech · NIT&nbsp;Durgapur</p>
+          <p>B.Tech · NIT&nbsp;Durgapur</p>
         </div>
       </div>
 
