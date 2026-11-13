@@ -12,7 +12,7 @@ const About = () => {
     { icon: FaBriefcase, label: 'Experience', value: '5+ Years', highlight: true },
     { icon: FaAward, label: 'Projects', value: '51 Repos', highlight: true },
     { icon: FaGraduationCap, label: 'Education', value: 'NIT Durgapur' },
-    { icon: FaMapMarkerAlt, label: 'Location', value: 'Kolkata, India' },
+    { icon: FaMapMarkerAlt, label: 'Location', value: 'Gurugram, India' },
   ]
 
   return (
