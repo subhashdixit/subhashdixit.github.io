@@ -111,7 +111,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-3 text-zinc-400">
                 <div className="w-2 h-2 bg-teal-400 rounded-full"></div>
-                <span className="font-light">📍 Kolkata, India</span>
+                <span className="font-light">📍 Gurugram, India</span>
               </div>
             </motion.div>
 
