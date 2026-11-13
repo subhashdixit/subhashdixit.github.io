@@ -33,7 +33,7 @@ function Home() {
           <p className="loop-home-tenure">5+ years of experience</p>
         </div>
         <div className="loop-home-summary">
-          <p className="loop-tagline">Forecasting | Pricing &amp; Promotions | Feedback Analysis | AI Chatbots &amp; Agents</p>
+          <p className="loop-tagline">Forecasting | Pricing &amp; Promotions | Customer Analytics | AI Chatbots &amp; Agents</p>
           <p>I’ve built sales and demand forecasting systems, developed econometric models to measure price elasticity and promotion response, and used NLP to find recurring themes in customer feedback.</p>
           <p id="home-projects">I built <a href="#ai-lab">Ask Subhash</a>, a RAG chatbot that answers questions about my work and links to the original code, notebook, or report. I also build reusable AI skills and agents to help me review code, debug, and test changes.</p>
           <p>I enjoy taking an idea from a notebook to a tool people can use in their day-to-day work.</p>
@@ -45,6 +45,7 @@ function Home() {
         <div className="loop-home-affiliation">
           <p>EPAM Systems</p>
           <p>B.Tech · NIT&nbsp;Durgapur</p>
+          <p>Gurugram, India</p>
         </div>
       </div>
 
